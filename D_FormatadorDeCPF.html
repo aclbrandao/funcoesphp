@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPF</title>
+</head>
+<body>
+    <fieldset style="width: 30%">
+    <legend><h2>CPF</h2></legend>
+    <form method="GET">       
+        <label>Insira aqui:</label><br><br>    
+        <input type="number" name="cpf"><br><br>
+        <input type="submit" value="enviar"><br>
+        <br><br>
+        <?php
+        include ("D_FormatadorDeCPFfuncao.php");
+        if (isset($_GET["cpf"])){
+            $n=$_GET["cpf"];
+            $ncpf = cpf($n);
+            echo "$ncpf";
+        }
+        ?>
+    </form>
+</fieldset> 
+</body>
+</html>
